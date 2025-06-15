@@ -161,7 +161,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ setCartCount }) => {
               <button
                 key={index}
                 onClick={() => setSelectedImageIndex(index)}
-                className={`aspect-square overflow-hidden rounded-md border-2 transition-all ${
+                className={`cursor-pointer aspect-square overflow-hidden rounded-md border-2 transition-all ${
                   selectedImageIndex === index
                     ? "border-blue-500 ring-2 ring-blue-200"
                     : "border-gray-200 hover:border-gray-300"
@@ -203,7 +203,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ setCartCount }) => {
               <button
                 onClick={() => handleQuantityChange(-1)}
                 disabled={quantity <= 1}
-                className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="cursor-pointer w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Minus className="w-4 h-4" />
               </button>
@@ -218,7 +218,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ setCartCount }) => {
 
               <button
                 onClick={() => handleQuantityChange(1)}
-                className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
+                className="cursor-pointer w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
               >
                 <Plus className="w-4 h-4" />
               </button>
@@ -227,7 +227,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ setCartCount }) => {
             <button
               onClick={handleAddToCart}
               disabled={isAddingToCart}
-              className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white py-3 px-6 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center space-x-2"
+              className="cursor-pointer w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white py-3 px-6 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center space-x-2"
             >
               {isAddingToCart ? (
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
