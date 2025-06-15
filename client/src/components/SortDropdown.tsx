@@ -1,10 +1,15 @@
 import type { SortDropdownProps } from "@/types/product";
 
-
-export const SortDropdown: React.FC<SortDropdownProps> = ({ sortValue, onSortChange }) => {
+export const SortDropdown: React.FC<SortDropdownProps> = ({
+  sortValue,
+  onSortChange,
+}) => {
   return (
     <div className="relative">
-      <label htmlFor="sort" className="block text-sm font-medium text-gray-700 mb-1">
+      <label
+        htmlFor="sort"
+        className="block text-sm font-medium text-gray-700 mb-1"
+      >
         Sort by:
       </label>
       <select

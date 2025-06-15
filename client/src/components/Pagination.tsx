@@ -1,7 +1,11 @@
 import type { PaginationProps } from "@/types/product";
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
+export const Pagination: React.FC<PaginationProps> = ({
+  currentPage,
+  totalPages,
+  onPageChange,
+}) => {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
@@ -15,14 +19,14 @@ export const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages,
         <span className="ml-1">Previous</span>
       </button>
 
-      {pages.map(page => (
+      {pages.map((page) => (
         <button
           key={page}
           onClick={() => onPageChange(page)}
           className={`px-3 py-2 border rounded-md ${
             currentPage === page
-              ? 'bg-blue-600 text-white border-blue-600'
-              : 'border-gray-300 hover:bg-gray-50'
+              ? "bg-blue-600 text-white border-blue-600"
+              : "border-gray-300 hover:bg-gray-50"
           }`}
         >
           {page}

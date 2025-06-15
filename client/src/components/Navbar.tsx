@@ -9,7 +9,6 @@ type NavbarProps = {
 };
 
 export function Navbar({ cartCount, setCartCount }: NavbarProps) {
-    
   useEffect(() => {
     const fetchCartCount = async () => {
       try {
@@ -19,7 +18,7 @@ export function Navbar({ cartCount, setCartCount }: NavbarProps) {
         console.error("Error fetching cart count:", err);
       }
     };
-    fetchCartCount()
+    fetchCartCount();
   }, []);
 
   return (
@@ -33,13 +32,6 @@ export function Navbar({ cartCount, setCartCount }: NavbarProps) {
       </Link>
 
       <div className="flex items-center space-x-6">
-        <Link
-          to="/"
-          className="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-200"
-        >
-          Products
-        </Link>
-
         <div className="flex items-center space-x-2 bg-blue-50 px-3 py-2 rounded-lg">
           <ShoppingCart className="w-5 h-5 text-blue-600" />
           <span className="font-medium text-blue-900">
