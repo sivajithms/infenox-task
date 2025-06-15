@@ -28,7 +28,7 @@ export function Navbar({ cartCount, setCartCount }: NavbarProps) {
         className="flex items-center space-x-2 text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-200"
       >
         <Store className="w-6 h-6" />
-        <span>Storefront</span>
+        <span>Online Store</span>
       </Link>
 
       <div className="flex items-center space-x-6">
