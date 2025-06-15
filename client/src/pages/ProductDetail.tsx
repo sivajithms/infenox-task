@@ -105,6 +105,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ setCartCount }) => {
   };
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     fetchProduct();
     fetchCartCount();
   }, [id]);
