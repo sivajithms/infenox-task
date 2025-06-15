@@ -1,0 +1,30 @@
+# Top-level node modules (if any)
+node_modules/
+.env
+dist/
+*.log
+
+# OS & IDE specific
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
+
+# === server ===
+/server/node_modules/
+/server/dist/
+/server/.env
+/server/*.log
+/server/coverage/
+
+# TypeScript artifacts
+/server/**/*.tsbuildinfo
+
+# === client ===
+/client/node_modules/
+/client/dist/
+/client/build/
+/client/.env
+/client/.next
+/client/.turbo
+/client/coverage/
