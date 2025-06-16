@@ -54,36 +54,25 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ setCartCount }) => {
     try {
       setIsAddingToCart(true);
 
-      const response = await fetch("http://localhost:3000/api/cart/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          productId: product._id,
-          quantity: quantity,
-        }),
+      const response = await api.post("/cart/add", {
+        productId: product._id,
+        quantity,
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to add to cart");
+      const data = response.data;
+
+      if (!data.success) {
+        throw new Error(data.message || "Failed to add product to cart");
       }
 
-      const data = await response.json();
+      await fetchCartCount();
 
-      if (data.success) {
-        // Update cart count
-        await fetchCartCount();
+      setQuantity(1);
 
-        // Reset quantity to 1
-        setQuantity(1);
-
-        // Show success feedback (optional)
-        alert("Product added to cart successfully!");
-      }
+      // Show success feedback
+      alert("Product added to cart successfully!");
     } catch (err) {
       console.error("Error adding to cart:", err);
-      alert("Failed to add product to cart. Please try again.");
     } finally {
       setIsAddingToCart(false);
     }
